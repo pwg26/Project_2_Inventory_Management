@@ -21,82 +21,83 @@
                         <label class="label">Add Product</label>
                         {{!--Product name --}}
                         <div class="field">
-                            <label class="label">Product Name</label>
+                            <label for="nameInput" class="label">Product Name</label>
                             <div class="control">
                                 <input class="input" id="nameInput" type="text" placeholder="Type product name here." />
+
                             </div>
                         </div>
                         {{!-- Description --}}
                         <div class="field">
-                            <label for="descriptionInput" clas="label">Description</label>
+                            <label for="description" class="label">Description</label>
                             <div class="control">
-                                <input class="description" id="description" style="color:grey; font-weight; bold">
+                                <input class="input" id="description" style="color:grey; font-weight; bold">
+
                             </div>
                         </div>
                         {{!-- asset value --}}
                         <div class="field">
-                            <label for="Input" class="label">asset value</label>
+                            <label for="assetVal" class="label">asset value</label>
                             <div class="control">
-                                <input class="input" id="costInout" type="text"
+                                <input class="input" id="assetVal" type="text"
                                     placeholder="asset value of the product." />
 
                             </div>
                         </div>
                         {{!-- is rented --}}
                         <div class="field">
-                            <label for="isRentedInput" clas="label">isrented</label>
+                            <label for="isRented" class="label">Rental Status</label>
                             <div class="control">
-                                <input class="isrented" id="isrented" style="color:grey; font-weight; bold">
+                                <input class="input" id="isRented" style="color:grey; font-weight; bold">
+
                             </div>
                         </div>
                         {{!-- rented location --}}
                         <div class="field">
-                            <label for="rentedLocation" class="label">rentedLocation</label>
+                            <label for="rentedLocation" class="label">Rented Location</label>
                             <div class="control">
-                                <input class="input" type="text" id="rentedLocationInput" placeholder="?" />
+                                <input class="input" type="text" id="rentedLocation" placeholder="i.e. Denver" />
 
                             </div>
 
                         </div>
                         {{!-- Company --}}
                         <div class="field">
-                            <label for="companyRenting" class="label">rentedLocation</label>
+                            <label for="companyRenting" class="label">Company Renting</label>
                             <div class="control">
-                                <input class="input" type="text" id="rentedLocationInput" placeholder="?" />
+                                <input class="input" type="text" id="companyRenting" placeholder="i.e. Dave's Trucks" />
 
                             </div>
                         </div>
                         {{!-- Rate --}}
                         <div class="field">
-                            <label for="rental_rate" class="label">rentedLocation</label>
+                            <label for="rentalRate" class="label">Rate per week</label>
                             <div class="control">
-                                <input class="input" type="text" id="rentedLocationInput" placeholder="?" />
+                                <input class="input" type="text" id="rentalRate" placeholder="i.e. $200" />
 
                             </div>
                         </div>
                         {{!-- Return --}}
-                        <div class="field">
-                            <label for="realized_returns" class="label">rentedLocation</label>
+                        {{!-- <div class="field">
+                            <label for="realized_returns" class="label">Realized return</label>
                             <div class="control">
-                                <input class="input" type="text" id="rentedLocationInput" placeholder="?" />
+                                <input class="input" type="text" id="returnRealized" placeholder="Realized Return" />
 
                             </div>
-                        </div>
+                        </div> --}}
                         {{!-- Checkin --}}
                         <div class="field">
-                            <label for="timeCheckedIn" class="label">time checked in</label>
+                            <label for="checkIn" class="label">time checked in</label>
                             <div class="control">
-                                <input class="input" type="text" id="rentedLocationInput"
-                                    placeholder="time checkedin?" />
+                                <input class="input" type="text" id="checkIn" placeholder="time checked-in?" />
 
                             </div>
                         </div>
                         {{!-- Checkout --}}
                         <div class="field">
-                            <label for="time_checked_out" class="label">time checked out</label>
+                            <label for="checkOut" class="label">time checked out</label>
                             <div class="control">
-                                <input class="input" type="text" id="rentedLocationInput"
-                                    placeholder="time checkedout?" />
+                                <input class="input" type="text" id="checkOut" placeholder="time checked-out?" />
 
                             </div>
                         </div>
