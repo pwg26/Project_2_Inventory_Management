@@ -33,3 +33,8 @@ h5 {
   height: 40%;
   width: 40%;
 }
+caption {
+  font-weight: bolder;
+  font-size: xx-large;
+  color: black;
+}
