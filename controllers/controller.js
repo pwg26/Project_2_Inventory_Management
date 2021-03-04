@@ -27,7 +27,7 @@ router.get("/assets", function (req, res) {
       console.log(dbEquipment);
       // into the main index, updating the page
       var hbsObject = { equipment: dbEquipment };
-      return res.render("product", hbsObject);
+      return res.render("index", hbsObject);
     });
 });
 
