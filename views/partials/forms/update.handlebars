@@ -1,5 +1,15 @@
-<form name="orderForm" id="orderForm" action="/assets/create" method="POST">
-    <label class="label">Add an asset</label>
+<form name="orderForm" id="orderForm" action="/assets/update" method="PUT">
+    <label class="label">Update an asset</label>
+
+    {{!--Product ID --}}
+    <div class="field">
+        <label for="idInput" class="label">ID #</label>
+        <div class="control">
+            <input class="input" id="idInput" name="id" type="text" placeholder="Type product name here." />
+        </div>
+    </div>
+
+
     {{!--Product name --}}
     <div class="field">
         <label for="nameInput" class="label">Product Name</label>
@@ -20,13 +30,13 @@
     <div class="field">
         <label for="assetVal" class="label">asset value</label>
         <div class="control">
-            <input class="input" id="assetVal" name="asset_value" type="text"
-                placeholder="asset value of the product." />
+            <input class="input" id="assetVal" name="asset_value" type="number"
+                placeholder="asset value of the product." required value="0" />
 
         </div>
     </div>
     {{!-- is rented --}}
-    {{!-- <div class="field">
+    <div class="field">
         <label for="isRented" class="label">Rental Status</label>
         <div class="control">
             <select name="is_rented" id="isRented">
@@ -35,7 +45,7 @@
             </select>
 
         </div>
-    </div> --}}
+    </div>
     {{!-- rented location --}}
     <div class="field">
         <label for="rentedLocation" class="label">Rented Location</label>
@@ -45,45 +55,48 @@
 
     </div>
     {{!-- Company --}}
-    {{!-- <div class="field">
+    <div class="field">
         <label for="companyRenting" class="label">Company Renting</label>
         <div class="control">
-            <input class="input" type="text" id="companyRenting" placeholder="i.e. Dave's Trucks" />
+            <input class="input" type="text" id="companyRenting" name="company_renting"
+                placeholder="i.e. Dave's Trucks" />
 
         </div>
-    </div> --}}
+    </div>
     {{!-- Rate --}}
     <div class="field">
         <label for="rentalRate" class="label">Rate per week</label>
         <div class="control">
-            <input class="input" type="text" id="rentalRate" placeholder="i.e. $200" />
+            <input class="input" type="text" id="rentalRate" name=" rental_rate" placeholder="i.e. $200" />
 
         </div>
     </div>
     {{!-- Return --}}
-    {{!-- <div class="field">
+    <div class="field">
         <label for="realized_returns" class="label">Realized return</label>
         <div class="control">
-            <input class="input" type="text" id="returnRealized" placeholder="Realized Return" />
+            <input class="input" type="text" id="returnRealized" answer="realized_returns"
+                placeholder="Realized Return" />
 
         </div>
-    </div> --}}
+    </div>
     {{!-- Checkin --}}
-    {{!-- <div class="field">
+    <div class="field">
         <label for="checkIn" class="label">time checked in</label>
         <div class="control">
-            <input class="input" type="text" id="checkIn" placeholder="time checked-in?" />
+            <input class="input" type="text" id="checkIn" answer="time_checked_in" placeholder="time checked-in?" />
 
         </div>
-    </div> --}}
+    </div>
     {{!-- Checkout --}}
-    {{!-- <div class="field">
+    <div class="field">
         <label for="checkOut" class="label">time checked out</label>
         <div class="control">
-            <input class="input" type="text" id="checkOut" placeholder="time checked-out?" />
+            <input class="input" type="text" id="checkOut" answer="time_checked_out" placeholder="time checked-out?" />
 
         </div>
-    </div> --}}
+    </div>
+
 
     <input type="submit" value="Send">
 </form>
