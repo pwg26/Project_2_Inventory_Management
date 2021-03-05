@@ -31,25 +31,42 @@ router.get("/", function (req, res) {
       return res.render("index", hbsObject);
     });
 });
-// // post route to create new inventory item
-// router.post("/assets/create", function (req, res) {
-//   // edited equipment create to add in a name, description, asset value, location, and rental rate
-//   db.Equipment.create(req.body)
-//     // pass the result of our call
-//     .then(function (dbEquipment) {
-//       // log the result to our terminal/bash window
-//       console.log(dbEquipment);
-//       // redirect
-//       res.redirect("/");
-//     });
-// });
+// post route to create new inventory item
+router.post("/assets/create", function (req, res) {
+  // edited equipment create to add in a name, description, asset value, location, and rental rate
+  db.Equipment.create(req.body)
+    // pass the result of our call
+    .then(function (dbEquipment) {
+      // log the result to our terminal/bash window
+      console.log(dbEquipment);
+      // redirect
+      res.redirect("/");
+    });
+});
 
 // // put route to devour a burger
 router.put("/assets/update", function (req, res) {
   // update one piece of equipment in all
-  db.Equipment.update(req.body, where, {
-    id: req.body.id,
-  }).then(function (dbEquipment) {
+  db.Equipment.update(
+    {
+      name: req.body.name,
+      description: req.body.description,
+      asset_value: req.body.asset_value,
+      is_rented: req.body.is_rented,
+      location: req.body.location,
+      company_rentingme: req.body.company_renting,
+      rental_rate: req.body.rental_rate,
+      realized_returns: req.body.realized_returns,
+      time_checked_in: rezq.body.time_checked_in,
+      time_checked_out: req.body.time_checked_out,
+    },
+    {
+      where: {
+        id: req.body.id,
+      },
+    }
+  ).then(function (dbEquipment) {
+    console.log(dbEquipment);
     res.redirect("/");
   });
 });

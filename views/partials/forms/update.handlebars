@@ -3,9 +3,9 @@
 
     {{!--Product ID --}}
     <div class="field">
-        <label for="IDInput" class="label">ID #</label>
+        <label for="idInput" class="label">ID #</label>
         <div class="control">
-            <input class="input" id="nameInput" name="id" type="text" placeholder="Type product name here." />
+            <input class="input" id="idInput" name="id" type="text" placeholder="Type product name here." />
         </div>
     </div>
 
@@ -58,7 +58,8 @@
     <div class="field">
         <label for="companyRenting" class="label">Company Renting</label>
         <div class="control">
-            <input class="input" type="text" id="companyRenting" placeholder="i.e. Dave's Trucks" />
+            <input class="input" type="text" id="companyRenting" name="company_renting"
+                placeholder="i.e. Dave's Trucks" />
 
         </div>
     </div>
@@ -66,7 +67,7 @@
     <div class="field">
         <label for="rentalRate" class="label">Rate per week</label>
         <div class="control">
-            <input class="input" type="text" id="rentalRate" placeholder="i.e. $200" />
+            <input class="input" type="text" id="rentalRate" name=" rental_rate" placeholder="i.e. $200" />
 
         </div>
     </div>
@@ -74,7 +75,8 @@
     <div class="field">
         <label for="realized_returns" class="label">Realized return</label>
         <div class="control">
-            <input class="input" type="text" id="returnRealized" placeholder="Realized Return" />
+            <input class="input" type="text" id="returnRealized" answer="realized_returns"
+                placeholder="Realized Return" />
 
         </div>
     </div>
@@ -82,7 +84,7 @@
     <div class="field">
         <label for="checkIn" class="label">time checked in</label>
         <div class="control">
-            <input class="input" type="text" id="checkIn" placeholder="time checked-in?" />
+            <input class="input" type="text" id="checkIn" answer="time_checked_in" placeholder="time checked-in?" />
 
         </div>
     </div>
@@ -90,7 +92,7 @@
     <div class="field">
         <label for="checkOut" class="label">time checked out</label>
         <div class="control">
-            <input class="input" type="text" id="checkOut" placeholder="time checked-out?" />
+            <input class="input" type="text" id="checkOut" answer="time_checked_out" placeholder="time checked-out?" />
 
         </div>
     </div>
