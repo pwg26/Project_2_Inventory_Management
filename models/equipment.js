@@ -26,19 +26,19 @@ module.exports = function (sequelize, DataTypes) {
     },
     rental_rate: {
       type: DataTypes.DECIMAL,
-      defaultValue: "--",
+      defaultValue: null,
     },
     time_checked_out: {
       type: DataTypes.DATE,
-      defaultValue: "--",
+      defaultValue: null,
     },
     time_checked_in: {
       type: DataTypes.DATE,
-      defaultValue: "--",
+      defaultValue: null,
     },
     realized_returns: {
       type: DataTypes.DECIMAL,
-      defaultValue: "--",
+      defaultValue: null,
     },
   });
   return Equipment;
