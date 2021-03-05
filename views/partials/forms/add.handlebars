@@ -1,4 +1,5 @@
-<form class="m-4" name="newForm" id="newForm" action="/assets/create" method="POST">
+<form class="m-4" name="addForm" id="addForm">
+
     <label class="label">ADD AN ASSET</label>
     {{!--Product name --}}
     <div class="field">
@@ -57,7 +58,7 @@
     <div class="field">
         <label for="rentalRate" class="label">Rate Per Week</label>
         <div class="control">
-            <input class="input field-place" type="text" id="rentalRate" placeholder="i.e. $200" />
+            <input class="input field-place" type="text" id="rentalRate" name="rental_rate" placeholder="" />
 
         </div>
     </div>
@@ -86,5 +87,5 @@
         </div>
     </div> --}}
 
-    <input type="submit" value="Send">
+    <button class="btn btn-primary btn-style" type="submit" value="Send">submit</button>
 </form>
