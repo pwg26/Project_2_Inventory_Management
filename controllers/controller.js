@@ -57,7 +57,7 @@ router.put("/assets/update", function (req, res) {
       company_rentingme: req.body.company_renting,
       rental_rate: req.body.rental_rate,
       realized_returns: req.body.realized_returns,
-      time_checked_in: rezq.body.time_checked_in,
+      time_checked_in: req.body.time_checked_in,
       time_checked_out: req.body.time_checked_out,
     },
     {
