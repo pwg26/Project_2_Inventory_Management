@@ -26,6 +26,8 @@ router.get("/", function (req, res) {
     .then(function (dbEquipment) {
       // into the main index, updating the page
       var hbsObject = { equipment: dbEquipment };
+<<<<<<< HEAD
+=======
 
       hbsObject.equipment = hbsObject.equipment.map((eq) => ({
         ...eq,
@@ -33,6 +35,7 @@ router.get("/", function (req, res) {
       }));
 
       console.log(hbsObject.equipment);
+>>>>>>> master
       return res.render("index", hbsObject);
     });
 });
