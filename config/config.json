@@ -1,7 +1,15 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "root",
+=======
+<<<<<<< HEAD
+    "password": "Melissa0723!",
+=======
+    "password": "PantheR1994*",
+>>>>>>> master
+>>>>>>> master
     "database": "inventory_db",
     "host": "127.0.0.1",
     "port": 8889,
@@ -9,7 +17,15 @@
   },
   "test": {
     "username": "root",
+<<<<<<< HEAD
     "password": "root",
+=======
+<<<<<<< HEAD
+    "password": "Melissa0723!",
+=======
+    "password": "PantheR1994*",
+>>>>>>> master
+>>>>>>> master
     "database": "inventory_db",
     "host": "127.0.0.1",
     "port": 8889,
@@ -17,7 +33,15 @@
   },
   "production": {
     "username": "root",
+<<<<<<< HEAD
     "password": "root",
+=======
+<<<<<<< HEAD
+    "password": "Melissa0723!",
+=======
+    "password": "PantheR1994*",
+>>>>>>> master
+>>>>>>> master
     "database": "inventory_db",
     "host": "127.0.0.1",
     "port": 8889,

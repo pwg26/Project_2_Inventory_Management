@@ -6,17 +6,14 @@
 // but with each route gutted and replaced with sequelize queries
 // where references to our outmoded ORM file once sat.
 var express = require("express");
-
 var router = express.Router();
 // edit model to match sequelize
 var db = require("../models/");
-
 // get route -> index
 // router.get("/", function (req, res) {
 //   // send us to the next get function instead.
 //   res.redirect("/assets");
 // });
-
 // for assets page ========================================================================
 // get route, edited to match sequelize
 router.get("/", function (req, res) {
@@ -26,17 +23,14 @@ router.get("/", function (req, res) {
     .then(function (dbEquipment) {
       // into the main index, updating the page
       var hbsObject = { equipment: dbEquipment };
-
       hbsObject.equipment = hbsObject.equipment.map((eq) => ({
         ...eq,
         is_rented: !!eq.is_rented,
       }));
-
       console.log(hbsObject.equipment);
       return res.render("index", hbsObject);
     });
 });
-
 // post route to create new inventory item
 router.post("/assets/create", function (req, res) {
   // edited equipment create to add in a name, description, asset value, location, and rental rate
@@ -49,9 +43,8 @@ router.post("/assets/create", function (req, res) {
       res.redirect("/");
     });
 });
-
 // put route to devour a burger
-router.put("/assets/update/:id", function (req, res) {
+router.put("/assets/update", function (req, res) {
   // update one piece of equipment in all
   db.Equipment.update(
     {
@@ -65,7 +58,6 @@ router.put("/assets/update/:id", function (req, res) {
       time_checked_out: req.body.company_time_checked_out,
       time_checked_in: req.body.time_checked_in,
     },
-
     {
       where: {
         id: req.body.id,
@@ -75,7 +67,6 @@ router.put("/assets/update/:id", function (req, res) {
     res.redirect("/");
   });
 });
-
 router.delete("/assets/update/:id", function (req, res) {
   // delte 1 equipment entry
   db.Equipment.destroy({
@@ -86,5 +77,4 @@ router.delete("/assets/update/:id", function (req, res) {
     res.redirect("/");
   });
 });
-
 module.exports = router;
