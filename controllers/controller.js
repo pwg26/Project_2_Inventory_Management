@@ -33,7 +33,7 @@ router.get("/", function (req, res) {
     });
 });
 // post route to create new inventory item
-router.post("/assets/create", function (req, res) {
+router.post(`/api/equipment/`, function (req, res) {
   // edited equipment create to add in a name, description, asset value, location, and rental rate
   db.Equipment.create(
     {
