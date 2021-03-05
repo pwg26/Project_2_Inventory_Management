@@ -38,3 +38,9 @@ caption {
   font-size: xx-large;
   color: black;
 }
+p {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bolder;
+  color: black;
+}
