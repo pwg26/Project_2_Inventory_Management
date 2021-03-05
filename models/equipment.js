@@ -24,22 +24,22 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       defaultValue: "--",
     },
-    rental_rate: { 
-     type: DataTypes.DECIMAL,
-     defaultValue: "--"
+    rental_rate: {
+      type: DataTypes.DECIMAL,
+      defaultValue: "--",
     },
-    time_checked_out:{ 
+    time_checked_out: {
       type: DataTypes.DATE,
-      defaultValue: "--"
-     }, 
-    time_checked_in: { 
-      type: DataTypes.DATE,
-      defaultValue: "--"
+      defaultValue: "--",
     },
-    realized_returns: { 
-     type: DataTypes.DECIMAL,
-     defaultValue: "--"
-    }
+    time_checked_in: {
+      type: DataTypes.DATE,
+      defaultValue: "--",
+    },
+    realized_returns: {
+      type: DataTypes.DECIMAL,
+      defaultValue: "--",
+    },
   });
   return Equipment;
 };

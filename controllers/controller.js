@@ -9,7 +9,7 @@ var express = require("express");
 var router = express.Router();
 // edit model to match sequelize
 var db = require("../models/");
-// get route -> index
+// get route -> indexgit 
 // router.get("/", function (req, res) {
 //   // send us to the next get function instead.
 //   res.redirect("/assets");
@@ -54,7 +54,7 @@ router.put("/assets/update", function (req, res) {
       asset_value: req.body.asset_value,
       is_rented: req.body.is_rented,
       location: req.body.location,
-      company_rentingme: req.body.company_renting,
+      company_renting: req.body.company_renting,
       rental_rate: req.body.rental_rate,
       realized_returns: req.body.realized_returns,
       time_checked_in: rezq.body.time_checked_in,
