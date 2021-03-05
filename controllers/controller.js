@@ -85,15 +85,17 @@ router.put("/api/equipment/:id", function (req, res) {
   });
 });
 
-// router.delete("/assets/update/:id", function (req, res) {
-//   // delte 1 equipment entry
-//   db.Equipment.destroy({
-//     where: {
-//       id: req.body.id,
-//     },
-//   }).then(function (dbEquipment) {
-//     res.redirect("/");
-//   });
-// });
+router.delete("/assets/delete", function (req, res) {
+  // delte 1 equipment entry
+  db.Equipment.destroy({
+    where: {
+      id: req.body.id,
+    },
+  }).then(function (dbEquipment) {
+    res.redirect("/");
+    console.log(dbEquipment);
+    res.status(200).end();
+  });
+});
 
 module.exports = router;
