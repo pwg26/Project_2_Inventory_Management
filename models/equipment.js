@@ -18,10 +18,14 @@ module.exports = function (sequelize, DataTypes) {
     },
     is_rented: {
       type: DataTypes.BOOLEAN,
+<<<<<<< HEAD
+=======
+      defaultValue: false,
+>>>>>>> 5d92765ec35fbb0e46db1a5ba55c2a39cbba6344
     },
     company_renting: {
       type: DataTypes.STRING,
-      defaultValue: "--"
+      defaultValue: "--",
     },
     rental_rate: DataTypes.DECIMAL,
     time_checked_out: DataTypes.DATE,
