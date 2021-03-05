@@ -51,19 +51,11 @@ router.post("/assets/create", function (req, res) {
 });
 
 // put route to devour a burger
-router.put("/assets/update/:id", function (req, res) {
+router.put("/assets/update", function (req, res) {
   // update one piece of equipment in all
   db.Equipment.update(
     {
-      name: req.body.name,
-      description: req.body.description,
-      asset_value: req.body.asset_value,
-      is_rented: req.body.is_rented,
-      location: req.body.location,
-      company_renting: req.body.company_renting,
-      rental_rate: req.body.rental_rate,
-      time_checked_out: req.body.company_time_checked_out,
-      time_checked_in: req.body.time_checked_in,
+      req.body
     },
 
     {
