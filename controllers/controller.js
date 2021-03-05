@@ -12,41 +12,30 @@ var router = express.Router();
 var db = require("../models/");
 
 // get route -> index
-router.get("/", function (req, res) {
-  // send us to the next get function instead.
-  res.redirect("/assets");
-});
+// router.get("/", function (req, res) {
+//   // send us to the next get function instead.
+//   res.redirect("/assets");
+// });
 
 // for assets page ========================================================================
 // get route, edited to match sequelize
-router.get("/assets", function (req, res) {
+router.get("/", function (req, res) {
   // replace old function with sequelize function
-  db.Equipment.findAll()
+  db.equipment
+    .findAll({ raw: true })
     // use promise method to pass the inventory items...
     .then(function (dbEquipment) {
-      console.log(dbEquipment);
       // into the main index, updating the page
       var hbsObject = { equipment: dbEquipment };
       return res.render("product", hbsObject);
     });
 });
 
-// for delete page ========================================================================
-router.get("/delete", function (req, res) {
-  // replace old function with sequelize function
-      return res.render("delete");
-    });
-
 // post route to create new inventory item
 router.post("/assets/create", function (req, res) {
   // edited equipment create to add in a name, description, asset value, location, and rental rate
-  db.Equipment.create({
-    name: req.body.name,
-    description: req.body.description,
-    asset_value: req.body.asset_value,
-    location: req.body.location,
-    rental_rate: req.body.rental_rate,
-  })
+  db.equipment
+    .create(req.body)
     // pass the result of our call
     .then(function (dbEquipment) {
       // log the result to our terminal/bash window
@@ -83,7 +72,7 @@ router.put("/assets/update/:id", function (req, res) {
 });
 
 router.delete("/assets/update/:id", function (req, res) {
-  // delete 1 equipment entry
+  // delte 1 equipment entry
   db.Equipment.destroy({
     where: {
       id: req.body.id,
