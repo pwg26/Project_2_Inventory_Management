@@ -1,6 +1,6 @@
 const add = document.getElementById("orderForm");
-console.log(update);
-update.addEventListener("submit", (e) => {
+// console.log(update);
+add.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = {
     id: document.getElementById("idInput").value,
