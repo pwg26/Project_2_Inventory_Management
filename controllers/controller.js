@@ -27,9 +27,15 @@ router.get("/assets", function (req, res) {
       console.log(dbEquipment);
       // into the main index, updating the page
       var hbsObject = { equipment: dbEquipment };
-      return res.render("delete", hbsObject);
+      return res.render("product", hbsObject);
     });
 });
+
+// for delete page ========================================================================
+router.get("/delete", function (req, res) {
+  // replace old function with sequelize function
+      return res.render("delete");
+    });
 
 // post route to create new inventory item
 router.post("/assets/create", function (req, res) {
@@ -77,7 +83,7 @@ router.put("/assets/update/:id", function (req, res) {
 });
 
 router.delete("/assets/update/:id", function (req, res) {
-  // delte 1 equipment entry
+  // delete 1 equipment entry
   db.Equipment.destroy({
     where: {
       id: req.body.id,
