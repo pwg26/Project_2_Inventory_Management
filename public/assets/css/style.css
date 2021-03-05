@@ -44,3 +44,15 @@ p {
   font-weight: bolder;
   color: black;
 }
+
+.btn-style {
+  margin-top: 20px;
+}
+
+.field-place {
+  color: grey;
+}
+
+.field {
+  margin: 12px 0px;
+}
