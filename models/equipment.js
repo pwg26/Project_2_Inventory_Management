@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    let Equipment = sequelize.define("equipment", {
+    let Equipment = sequelize.define("Equipment", {
       name: DataTypes.STRING,
       description: DataTypes.STRING,
       asset_value: DataTypes.DECIMAL,

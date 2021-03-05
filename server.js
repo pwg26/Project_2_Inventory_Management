@@ -16,7 +16,14 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
+<<<<<<< HEAD
 app.use(require("./controllers/controller.js"));
+=======
+
+var routes = require("./controllers/controller.js");
+
+app.use(routes);
+>>>>>>> cd6e93515fc5d36a64be55cca658a4486e0c3da5
 
 // listen on port 3000
 var PORT = process.env.PORT || 3000;
