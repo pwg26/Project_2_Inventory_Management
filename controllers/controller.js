@@ -43,39 +43,6 @@ router.post("/assets/create", function (req, res) {
       res.redirect("/");
     });
 });
-<<<<<<< HEAD
-
-// // put route to devour a burger
-// router.put("/assets/update", function (req, res) {
-//   // update one piece of equipment in all
-//   db.Equipment.update(
-//     {
-//       req.body
-//     },
-
-//     {
-//       where: {
-//         id: req.body.id,
-//       },
-//     }
-//   ).then(function (dbEquipment) {
-//     res.redirect("/");
-//   });
-// });
-
-// router.delete("/assets/update/:id", function (req, res) {
-//   // delte 1 equipment entry
-//   db.Equipment.destroy({
-//     where: {
-//       id: req.body.id,
-//     },
-//   }).then(function (dbEquipment) {
-//     res.redirect("/");
-//   });
-// });
-
-module.exports = router;
-=======
 // put route to devour a burger
 router.put("/assets/update", function (req, res) {
   // update one piece of equipment in all
@@ -111,4 +78,3 @@ router.delete("/assets/update/:id", function (req, res) {
   });
 });
 module.exports = router;
->>>>>>> master
