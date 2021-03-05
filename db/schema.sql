@@ -19,6 +19,5 @@ time_checked_out DATETIME,
 time_checked_in DATETIME,
 PRIMARY KEY (id)
 );
-
 SELECT * FROM equipment;
 

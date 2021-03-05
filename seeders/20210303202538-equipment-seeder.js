@@ -62,5 +62,8 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+
+
+    // sequelize db:seed:all  
   }
 };
