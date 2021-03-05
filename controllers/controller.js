@@ -27,7 +27,10 @@ router.get("/", function (req, res) {
       // into the main index, updating the page
       var hbsObject = { equipment: dbEquipment };
 <<<<<<< HEAD
+<<<<<<< HEAD
       return res.render("product", hbsObject);
+=======
+>>>>>>> 4afa588c92fe88f15d446595277a09b5fdcf53da
 =======
 
       hbsObject.equipment = hbsObject.equipment.map((eq) => ({
@@ -36,6 +39,7 @@ router.get("/", function (req, res) {
       }));
 
       console.log(hbsObject.equipment);
+>>>>>>> master
       return res.render("index", hbsObject);
 >>>>>>> 419da970a20ecec1ca51da8647ca90e74a43029f
     });
