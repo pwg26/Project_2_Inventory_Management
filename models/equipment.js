@@ -18,7 +18,6 @@ module.exports = function (sequelize, DataTypes) {
     },
     is_rented: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
     },
     company_renting: {
       type: DataTypes.STRING,
