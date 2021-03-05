@@ -1,10 +1,10 @@
-<form name="orderForm" id="orderForm" action="/assets/create" method="POST">
-    <label class="label">Add an asset</label>
+<form class="m-4" name="orderForm" id="orderForm" action="/assets/create" method="POST">
+    <label class="label">ADD AN ASSET</label>
     {{!--Product name --}}
     <div class="field">
         <label for="nameInput" class="label">Product Name</label>
         <div class="control">
-            <input class="input" id="nameInput" name="name" type="text" placeholder="Type product name here." />
+            <input class="input field-place" id="nameInput" name="name" type="text" placeholder="Asset name" />
         </div>
     </div>
 
@@ -12,15 +12,15 @@
     <div class="field">
         <label for="description" class="label">Description</label>
         <div class="control">
-            <input class="input" id="description" name="description" style="color:grey; font-weight; bold">
+            <textarea class="input field-place" id="description" name="description"></textarea>
         </div>
     </div>
 
     {{!-- asset value --}}
     <div class="field">
-        <label for="assetVal" class="label">asset value</label>
+        <label for="assetVal" class="label">Asset Value</label>
         <div class="control">
-            <input class="input" id="assetVal" name="asset_value" type="text"
+            <input class="input field-place" id="assetVal" name="asset_value" type="text"
                 placeholder="asset value of the product." />
 
         </div>
@@ -40,7 +40,8 @@
     <div class="field">
         <label for="rentedLocation" class="label">Rented Location</label>
         <div class="control">
-            <input class="input" type="text" name="location" id="rentedLocation" placeholder="i.e. Denver" />
+            <input class="input field-place" type="text" name="location" id="rentedLocation"
+                placeholder="i.e. Denver" />
         </div>
 
     </div>
@@ -54,9 +55,9 @@
     </div> --}}
     {{!-- Rate --}}
     <div class="field">
-        <label for="rentalRate" class="label">Rate per week</label>
+        <label for="rentalRate" class="label">Rate Per Week</label>
         <div class="control">
-            <input class="input" type="text" id="rentalRate" placeholder="i.e. $200" />
+            <input class="input field-place" type="text" id="rentalRate" placeholder="i.e. $200" />
 
         </div>
     </div>
