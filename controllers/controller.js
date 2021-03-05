@@ -27,18 +27,7 @@ router.get("/", function (req, res) {
     .then(function (dbEquipment) {
       // into the main index, updating the page
       var hbsObject = { equipment: dbEquipment };
-<<<<<<< HEAD
-
-      hbsObject.equipment = hbsObject.equipment.map((eq) => ({
-        ...eq,
-        is_rented: !!eq.is_rented,
-      }));
-
-      console.log(hbsObject.equipment);
-      return res.render("index", hbsObject);
-=======
       return res.render("product", hbsObject);
->>>>>>> cd6e93515fc5d36a64be55cca658a4486e0c3da5
     });
 });
 
