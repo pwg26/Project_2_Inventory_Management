@@ -1,4 +1,4 @@
-// Our  controller
+// / Our  controller
 // =====================
 // This file uses Sequelize to manage data manipulation
 // for all apropos http requests.
@@ -50,33 +50,33 @@ router.post("/assets/create", function (req, res) {
     });
 });
 
-// put route to devour a burger
-router.put("/assets/update", function (req, res) {
-  // update one piece of equipment in all
-  db.Equipment.update(
-    {
-      req.body
-    },
+// // put route to devour a burger
+// router.put("/assets/update", function (req, res) {
+//   // update one piece of equipment in all
+//   db.Equipment.update(
+//     {
+//       req.body
+//     },
 
-    {
-      where: {
-        id: req.body.id,
-      },
-    }
-  ).then(function (dbEquipment) {
-    res.redirect("/");
-  });
-});
+//     {
+//       where: {
+//         id: req.body.id,
+//       },
+//     }
+//   ).then(function (dbEquipment) {
+//     res.redirect("/");
+//   });
+// });
 
-router.delete("/assets/update/:id", function (req, res) {
-  // delte 1 equipment entry
-  db.Equipment.destroy({
-    where: {
-      id: req.body.id,
-    },
-  }).then(function (dbEquipment) {
-    res.redirect("/");
-  });
-});
+// router.delete("/assets/update/:id", function (req, res) {
+//   // delte 1 equipment entry
+//   db.Equipment.destroy({
+//     where: {
+//       id: req.body.id,
+//     },
+//   }).then(function (dbEquipment) {
+//     res.redirect("/");
+//   });
+// });
 
 module.exports = router;
