@@ -1,5 +1,15 @@
-<form name="orderForm" id="orderForm" action="/assets/create" method="POST">
-    <label class="label">Add Product</label>
+<form name="orderForm" id="orderForm" action="/assets/update" method="PUT">
+    <label class="label">Update an asset</label>
+
+    {{!--Product ID --}}
+    <div class="field">
+        <label for="IDInput" class="label">ID #</label>
+        <div class="control">
+            <input class="input" id="nameInput" name="id" type="text" placeholder="Type product name here." />
+        </div>
+    </div>
+
+
     {{!--Product name --}}
     <div class="field">
         <label for="nameInput" class="label">Product Name</label>
@@ -7,6 +17,7 @@
             <input class="input" id="nameInput" name="name" type="text" placeholder="Type product name here." />
         </div>
     </div>
+
     {{!-- Description --}}
     <div class="field">
         <label for="description" class="label">Description</label>
@@ -14,6 +25,7 @@
             <input class="input" id="description" name="description" style="color:grey; font-weight; bold">
         </div>
     </div>
+
     {{!-- asset value --}}
     <div class="field">
         <label for="assetVal" class="label">asset value</label>
@@ -27,9 +39,11 @@
     <div class="field">
         <label for="isRented" class="label">Rental Status</label>
         <div class="control">
-            <select name="is_rented" id="isRented">git
-                opion
+            <select name="is_rented" id="isRented">
+                <option value="1">True</option>
+                <option value="0">False</option>
             </select>
+
         </div>
     </div>
     {{!-- rented location --}}
@@ -64,7 +78,7 @@
 
         </div>
     </div>
-    {{!-- Check-in --}}
+    {{!-- Checkin --}}
     <div class="field">
         <label for="checkIn" class="label">time checked in</label>
         <div class="control">
@@ -72,7 +86,7 @@
 
         </div>
     </div>
-    {{!-- Check-out --}}
+    {{!-- Checkout --}}
     <div class="field">
         <label for="checkOut" class="label">time checked out</label>
         <div class="control">
@@ -80,6 +94,7 @@
 
         </div>
     </div>
+
 
     <input type="submit" value="Send">
 </form>
