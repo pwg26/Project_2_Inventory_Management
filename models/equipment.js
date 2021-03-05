@@ -5,12 +5,12 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
     },
     description: {
-     type: DataTypes.STRING,
-     allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     asset_value: {
-     type: DataTypes.DECIMAL,
-     allowNull: false,
+      type: DataTypes.DECIMAL,
+      allowNull: false,
     },
     location: {
       type: DataTypes.STRING,
