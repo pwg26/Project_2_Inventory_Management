@@ -21,7 +21,7 @@ var db = require("../models/");
 // get route, edited to match sequelize
 router.get("/", function (req, res) {
   // replace old function with sequelize function
-  db.equipment
+  db.Equipment
     .findAll({ raw: true })
     // use promise method to pass the inventory items...
     .then(function (dbEquipment) {
@@ -34,7 +34,7 @@ router.get("/", function (req, res) {
 // post route to create new inventory item
 router.post("/assets/create", function (req, res) {
   // edited equipment create to add in a name, description, asset value, location, and rental rate
-  db.equipment
+  db.Equipment
     .create(req.body)
     // pass the result of our call
     .then(function (dbEquipment) {
