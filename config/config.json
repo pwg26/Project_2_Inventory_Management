@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "Melissa0723!",
-=======
-    "password": "PantheR1994*",
->>>>>>> master
     "database": "inventory_db",
     "host": "127.0.0.1",
     "port": 3306,
