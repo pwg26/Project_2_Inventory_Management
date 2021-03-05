@@ -30,10 +30,22 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       defaultValue: "--",
     },
-    rental_rate: DataTypes.DECIMAL,
-    time_checked_out: DataTypes.DATE,
-    time_checked_in: DataTypes.DATE,
-    realized_returns: DataTypes.DECIMAL,
+    rental_rate: {
+      type: DataTypes.DECIMAL,
+      defaultValue: null,
+    },
+    time_checked_out: {
+      type: DataTypes.DATE,
+      defaultValue: null,
+    },
+    time_checked_in: {
+      type: DataTypes.DATE,
+      defaultValue: null,
+    },
+    realized_returns: {
+      type: DataTypes.DECIMAL,
+      defaultValue: null,
+    },
   });
 
   return Equipment;
