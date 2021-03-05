@@ -9,8 +9,8 @@ var express = require("express");
 var router = express.Router();
 // edit model to match sequelize
 var db = require("../models/");
-var format = require('date-fns/format')
-// get route -> indexgit 
+// var format = require("date-fns/format");
+// get route -> indexgit
 // router.get("/", function (req, res) {
 //   // send us to the next get function instead.
 //   res.redirect("/assets");
@@ -36,18 +36,19 @@ router.get("/", function (req, res) {
 router.post("/assets/create", function (req, res) {
   // edited equipment create to add in a name, description, asset value, location, and rental rate
   db.Equipment.create(
-      { name: req.body.name,
+    {
+      name: req.body.name,
       description: req.body.description,
       asset_value: req.body.asset_value,
       // is_rented: req.body.is_rented,
       location: req.body.location,
       // company_renting: req.body.company_renting,
-      rental_rate: req.body.rental_rate,}
-      // realized_returns: req.body.realized_returns,
-      // time_checked_in: req.body.time_checked_in,
-      // time_checked_out: req.body.time_checked_out,
-    
-    )
+      rental_rate: req.body.rental_rate,
+    }
+    // realized_returns: req.body.realized_returns,
+    // time_checked_in: req.body.time_checked_in,
+    // time_checked_out: req.body.time_checked_out,
+  )
     // pass the result of our call
     .then(function (dbEquipment) {
       // log the result to our terminal/bash window
@@ -58,29 +59,29 @@ router.post("/assets/create", function (req, res) {
 });
 
 // // put route to devour a burger
-router.put("/assets/update", function (req, res) {
+router.put("/api/equipment/:id", function (req, res) {
   // update one piece of equipment in all
   db.Equipment.update(
     {
       name: req.body.name,
       description: req.body.description,
       asset_value: req.body.asset_value,
-      is_rented: req.body.is_rented,
       location: req.body.location,
+      is_rented: req.body.is_rented,
       company_renting: req.body.company_renting,
       rental_rate: req.body.rental_rate,
-      realized_returns: req.body.realized_returns,
-      time_checked_in: req.body.time_checked_in,
       time_checked_out: req.body.time_checked_out,
+      time_checked_in: req.body.time_checked_in,
+      realized_returns: req.body.realized_returns,
     },
     {
       where: {
-        id: req.body.id,
+        id: parseInt(req.params.id),
       },
     }
   ).then(function (dbEquipment) {
     console.log(dbEquipment);
-    res.redirect("/");
+    res.status(200).end();
   });
 });
 
