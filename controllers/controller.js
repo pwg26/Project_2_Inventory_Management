@@ -21,13 +21,11 @@ var db = require("../models/");
 // get route, edited to match sequelize
 router.get("/", function (req, res) {
   // replace old function with sequelize function
-  db.equipment
-    .findAll({ raw: true })
+  db.Equipment.findAll({ raw: true })
     // use promise method to pass the inventory items...
     .then(function (dbEquipment) {
       // into the main index, updating the page
       var hbsObject = { equipment: dbEquipment };
-<<<<<<< HEAD
 
       hbsObject.equipment = hbsObject.equipment.map((eq) => ({
         ...eq,
@@ -36,17 +34,13 @@ router.get("/", function (req, res) {
 
       console.log(hbsObject.equipment);
       return res.render("index", hbsObject);
-=======
-      return res.render("product", hbsObject);
->>>>>>> cd6e93515fc5d36a64be55cca658a4486e0c3da5
     });
 });
 
 // post route to create new inventory item
 router.post("/assets/create", function (req, res) {
   // edited equipment create to add in a name, description, asset value, location, and rental rate
-  db.equipment
-    .create(req.body)
+  db.Equipment.create(req.body)
     // pass the result of our call
     .then(function (dbEquipment) {
       // log the result to our terminal/bash window
