@@ -1,3 +1,5 @@
+let table2 = require("./equipment2");
+
 module.exports = function (sequelize, DataTypes) {
   let Equipment = sequelize.define("Equipment", {
     name: {
@@ -10,6 +12,10 @@ module.exports = function (sequelize, DataTypes) {
     },
     asset_value: {
       type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
+    asset: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     location: {
@@ -41,7 +47,8 @@ module.exports = function (sequelize, DataTypes) {
       defaultValue: null,
     },
   });
-  return Equipment;
-};
 
-// default: null
+  return Equipment;
+
+  // default: null
+};
