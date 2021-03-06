@@ -1,11 +1,12 @@
-<form name="orderForm" id="orderForm" action="/assets/update" method="PUT">
-    <label class="label">Update an asset</label>
+<form class="m-4" name="updateForm" id="updateForm">
+    <label class="label">UPDATE AN ASSET</label>
+
 
     {{!--Product ID --}}
     <div class="field">
         <label for="idInput" class="label">ID #</label>
         <div class="control">
-            <input class="input" id="idInput" name="id" type="text" placeholder="Type product name here." />
+            <input class="input field-place" id="idInput" name="id" type="text" placeholder="Equipment ID" />
         </div>
     </div>
 
@@ -14,7 +15,7 @@
     <div class="field">
         <label for="nameInput" class="label">Product Name</label>
         <div class="control">
-            <input class="input" id="nameInput" name="name" type="text" placeholder="Type product name here." />
+            <input class="input field-place" id="nameInput" name="name" type="text" placeholder="Equipment name" />
         </div>
     </div>
 
@@ -22,14 +23,14 @@
     <div class="field">
         <label for="description" class="label">Description</label>
         <div class="control">
-            <input class="input" id="description" name="description" style="color:grey; font-weight; bold">
+            <textarea class="input field-place" id="description" name="description"></textarea>
         </div>
     </div>
     {{!-- asset value --}}
     <div class="field">
-        <label for="assetVal" class="label">asset value</label>
+        <label for="assetVal" class="label">Asset Value</label>
         <div class="control">
-            <input class="input" id="assetVal" name="asset_value" type="number"
+            <input class="input field-place" id="assetVal" name="asset_value" type="number"
                 placeholder="asset value of the product." required value="0" />
 
         </div>
@@ -37,7 +38,7 @@
     {{!-- is rented --}}
     <div class="field">
         <label for="isRented" class="label">Rental Status</label>
-        <div class="control">
+        <div class="control field-place">
             <select name="is_rented" id="isRented">
                 <option value="1">True</option>
                 <option value="0">False</option>
@@ -49,7 +50,8 @@
     <div class="field">
         <label for="rentedLocation" class="label">Rented Location</label>
         <div class="control">
-            <input class="input" type="text" name="location" id="rentedLocation" placeholder="i.e. Denver" />
+            <input class="input field-place" type="text" name="location" id="rentedLocation"
+                placeholder="i.e. Denver" />
         </div>
 
     </div>
@@ -57,45 +59,50 @@
     <div class="field">
         <label for="companyRenting" class="label">Company Renting</label>
         <div class="control">
-            <input class="input" type="text" id="companyRenting" name="company_renting"
+            <input class="input field-place" type="text" id="companyRenting" name="company_renting"
                 placeholder="i.e. Dave's Trucks" />
 
         </div>
     </div>
     {{!-- Rate --}}
     <div class="field">
-        <label for="rentalRate" class="label">Rate per week</label>
+        <label for="rentalRate" class="label">Rate Per Week</label>
         <div class="control">
-            <input class="input" type="text" id="rentalRate" name=" rental_rate" placeholder="i.e. $200" />
+            <input class="input field-place" type="text" id="rentalRate" name="rental_rate" placeholder="i.e. $200" />
 
         </div>
     </div>
     {{!-- Return --}}
     <div class="field">
-        <label for="realized_returns" class="label">Realized return</label>
+        <label for="realized_returns" class="label">Realized Return</label>
         <div class="control">
-            <input class="input" type="text" id="returnRealized" answer="realized_returns"
+            <input class="input field-place" type="text" id="returnRealized" name="realized_returns"
                 placeholder="Realized Return" />
 
         </div>
     </div>
     {{!-- Checkin --}}
     <div class="field">
-        <label for="checkIn" class="label">time checked in</label>
+        <label for="checkIn" class="label">Time Checked-in</label>
         <div class="control">
-            <input class="input" type="text" id="checkIn" answer="time_checked_in" placeholder="time checked-in?" />
+            <input class="input" type="date" id="checkIn" name="time_checked_in" placeholder="time checked-in?" />
 
         </div>
     </div>
     {{!-- Checkout --}}
     <div class="field">
-        <label for="checkOut" class="label">time checked out</label>
+        <label for="checkOut" class="label">Time Checked-out</label>
         <div class="control">
-            <input class="input" type="text" id="checkOut" answer="time_checked_out" placeholder="time checked-out?" />
+            <input class="input" type="date" id="checkOut" name="time_checked_out" placeholder="time checked-out?" />
 
         </div>
     </div>
 
+<<<<<<< HEAD
     <<<<<<< HEAD=======>>>>>>> f45b12f37a54c8cd5abba932cc22c118f27a4f11
         <input type="submit" value="Send">
+=======
+
+    <button class="btn btn-primary btn-style" type="submit" value="Send">submit</button>
+>>>>>>> 3f5942f4c78cae9416fda20cbdd31a7db98f5047
 </form>

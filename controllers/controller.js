@@ -9,7 +9,8 @@ var express = require("express");
 var router = express.Router();
 // edit model to match sequelize
 var db = require("../models/");
-// get route -> indexgit 
+// var format = require("date-fns/format");
+// get route -> indexgit
 // router.get("/", function (req, res) {
 //   // send us to the next get function instead.
 //   res.redirect("/assets");
@@ -32,9 +33,22 @@ router.get("/", function (req, res) {
     });
 });
 // post route to create new inventory item
-router.post("/assets/create", function (req, res) {
+router.post(`/api/equipment/`, function (req, res) {
   // edited equipment create to add in a name, description, asset value, location, and rental rate
-  db.Equipment.create(req.body)
+  db.Equipment.create(
+    {
+      name: req.body.name,
+      description: req.body.description,
+      asset_value: req.body.asset_value,
+      // is_rented: req.body.is_rented,
+      location: req.body.location,
+      // company_renting: req.body.company_renting,
+      rental_rate: req.body.rental_rate,
+    }
+    // realized_returns: req.body.realized_returns,
+    // time_checked_in: req.body.time_checked_in,
+    // time_checked_out: req.body.time_checked_out,
+  )
     // pass the result of our call
     .then(function (dbEquipment) {
       // log the result to our terminal/bash window
@@ -45,41 +59,43 @@ router.post("/assets/create", function (req, res) {
 });
 
 // // put route to devour a burger
-router.put("/assets/update", function (req, res) {
+router.put("/api/equipment/:id", function (req, res) {
   // update one piece of equipment in all
   db.Equipment.update(
     {
       name: req.body.name,
       description: req.body.description,
       asset_value: req.body.asset_value,
-      is_rented: req.body.is_rented,
       location: req.body.location,
+      is_rented: req.body.is_rented,
       company_renting: req.body.company_renting,
       rental_rate: req.body.rental_rate,
-      realized_returns: req.body.realized_returns,
-      time_checked_in: rezq.body.time_checked_in,
       time_checked_out: req.body.time_checked_out,
+      time_checked_in: req.body.time_checked_in,
+      realized_returns: req.body.realized_returns,
     },
     {
       where: {
-        id: req.body.id,
+        id: parseInt(req.params.id),
       },
     }
   ).then(function (dbEquipment) {
     console.log(dbEquipment);
-    res.redirect("/");
+    res.status(200).end();
   });
 });
 
-// router.delete("/assets/update/:id", function (req, res) {
-//   // delte 1 equipment entry
-//   db.Equipment.destroy({
-//     where: {
-//       id: req.body.id,
-//     },
-//   }).then(function (dbEquipment) {
-//     res.redirect("/");
-//   });
-// });
+router.delete("/assets/delete", function (req, res) {
+  // delte 1 equipment entry
+  db.Equipment.destroy({
+    where: {
+      id: req.body.id,
+    },
+  }).then(function (dbEquipment) {
+    res.redirect("/");
+    console.log(dbEquipment);
+    res.status(200).end();
+  });
+});
 
 module.exports = router;
