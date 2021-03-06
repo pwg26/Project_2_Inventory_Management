@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "1125",
-=======
-    "password": "PantheR1994*",
->>>>>>> 3f5942f4c78cae9416fda20cbdd31a7db98f5047
     "database": "inventory_db",
     "host": "127.0.0.1",
     "port": 3306,
@@ -13,11 +9,7 @@
   },
   "test": {
     "username": "root",
-<<<<<<< HEAD
     "password": "1125",
-=======
-    "password": "PantheR1994*",
->>>>>>> 3f5942f4c78cae9416fda20cbdd31a7db98f5047
     "database": "inventory_db",
     "host": "127.0.0.1",
     "port": 3306,
@@ -25,18 +17,11 @@
   },
   "production": {
     "username": "root",
-<<<<<<< HEAD
     "password": "1125",
     "database": "inventory_db",
     "host": "127.0.0.1",
     "port": 3306,
-=======
-    "password": "PantheR1994*",
-    "database": "inventory_db",
-    "host": "127.0.0.1",
-    "port": 3306,
 
->>>>>>> 3f5942f4c78cae9416fda20cbdd31a7db98f5047
     "dialect": "mysql"
   }
 }
