@@ -17,6 +17,8 @@ var db = require("../models/");
 // });
 // for assets page ========================================================================
 // get route, edited to match sequelize
+
+// ******* works but page needs to be reloaded
 router.get("/", function (req, res) {
   // replace old function with sequelize function
   db.Equipment.findAll({ raw: true })
@@ -26,25 +28,16 @@ router.get("/", function (req, res) {
       var hbsObject = { equipment: dbEquipment };
       hbsObject.equipment = hbsObject.equipment.map((eq) => ({
         ...eq,
-        is_rented: !!eq.is_rented,
       }));
       console.log(hbsObject.equipment);
       return res.render("index", hbsObject);
     });
 });
 // post route to create new inventory item
-router.post(`/api/equipment/`, function (req, res) {
+router.post("/api/equipment", function (req, res) {
   // edited equipment create to add in a name, description, asset value, location, and rental rate
   db.Equipment.create(
-    {
-      name: req.body.name,
-      description: req.body.description,
-      asset_value: req.body.asset_value,
-      // is_rented: req.body.is_rented,
-      location: req.body.location,
-      // company_renting: req.body.company_renting,
-      rental_rate: req.body.rental_rate,
-    }
+    req.body
     // realized_returns: req.body.realized_returns,
     // time_checked_in: req.body.time_checked_in,
     // time_checked_out: req.body.time_checked_out,
@@ -53,49 +46,49 @@ router.post(`/api/equipment/`, function (req, res) {
     .then(function (dbEquipment) {
       // log the result to our terminal/bash window
       console.log(dbEquipment);
+      res.status(200).end();
       // redirect
-      res.redirect("/");
     });
 });
 
-// // put route to devour a burger
-router.put("/api/equipment/:id", function (req, res) {
-  // update one piece of equipment in all
-  db.Equipment.update(
-    {
-      name: req.body.name,
-      description: req.body.description,
-      asset_value: req.body.asset_value,
-      location: req.body.location,
-      is_rented: req.body.is_rented,
-      company_renting: req.body.company_renting,
-      rental_rate: req.body.rental_rate,
-      time_checked_out: req.body.time_checked_out,
-      time_checked_in: req.body.time_checked_in,
-      realized_returns: req.body.realized_returns,
-    },
-    {
-      where: {
-        id: parseInt(req.params.id),
-      },
-    }
-  ).then(function (dbEquipment) {
-    console.log(dbEquipment);
-    res.status(200).end();
-  });
-});
+// // // put route to devour a burger
+// router.put("/api/equipment/:id", function (req, res) {
+//   // update one piece of equipment in all
+//   db.Equipment.update(
+//     {
+//       name: req.body.name,
+//       description: req.body.description,
+//       asset_value: req.body.asset_value,
+//       location: req.body.location,
+//       is_rented: req.body.is_rented,
+//       company_renting: req.body.company_renting,
+//       rental_rate: req.body.rental_rate,
+//       time_checked_out: req.body.time_checked_out,
+//       time_checked_in: req.body.time_checked_in,
+//       realized_returns: req.body.realized_returns,
+//     },
+//     {
+//       where: {
+//         id: parseInt(req.params.id),
+//       },
+//     }
+//   ).then(function (dbEquipment) {
+//     console.log(dbEquipment);
+//     res.status(200).end();
+//   });
+// });
 
-router.delete("/assets/delete", function (req, res) {
-  // delte 1 equipment entry
-  db.Equipment.destroy({
-    where: {
-      id: req.body.id,
-    },
-  }).then(function (dbEquipment) {
-    res.redirect("/");
-    console.log(dbEquipment);
-    res.status(200).end();
-  });
-});
+// // ******* works but page needs to be reloaded
+// router.delete("/api/equipment/:id", function (req, res) {
+//   // delte 1 equipment entry
+//   db.Equipment.destroy({
+//     where: {
+//       id: req.body.id,
+//     },
+//   }).then(function (dbEquipment) {
+//     console.log(dbEquipment);
+//     res.status(200).end();
+//   });
+// });
 
 module.exports = router;
