@@ -51,44 +51,43 @@ router.post("/api/equipment", function (req, res) {
     });
 });
 
-// // // put route to devour a burger
-// router.put("/api/equipment/:id", function (req, res) {
-//   // update one piece of equipment in all
-//   db.Equipment.update(
-//     {
-//       name: req.body.name,
-//       description: req.body.description,
-//       asset_value: req.body.asset_value,
-//       location: req.body.location,
-//       is_rented: req.body.is_rented,
-//       company_renting: req.body.company_renting,
-//       rental_rate: req.body.rental_rate,
-//       time_checked_out: req.body.time_checked_out,
-//       time_checked_in: req.body.time_checked_in,
-//       realized_returns: req.body.realized_returns,
-//     },
-//     {
-//       where: {
-//         id: parseInt(req.params.id),
-//       },
-//     }
-//   ).then(function (dbEquipment) {
-//     console.log(dbEquipment);
-//     res.status(200).end();
-//   });
-// });
+// // put route to devour a burger
+router.put("/api/equipment/:id", function (req, res) {
+  // update one piece of equipment in all
+  db.Equipment.update(
+    {
+      name: req.body.name,
+      description: req.body.description,
+      asset_value: req.body.asset_value,
+      location: req.body.location,
+      is_rented: req.body.is_rented,
+      company_renting: req.body.company_renting,
+      rental_rate: req.body.rental_rate,
+      time_checked_out: req.body.time_checked_out,
+      time_checked_in: req.body.time_checked_in,
+      realized_returns: req.body.realized_returns,
+    },
+    {
+      where: {
+        id: parseInt(req.params.id),
+      },
+    }
+  ).then(function (dbEquipment) {
+    console.log(dbEquipment);
+    res.status(200).end();
+  });
+});
 
-// // ******* works but page needs to be reloaded
-// router.delete("/api/equipment/:id", function (req, res) {
-//   // delte 1 equipment entry
-//   db.Equipment.destroy({
-//     where: {
-//       id: req.body.id,
-//     },
-//   }).then(function (dbEquipment) {
-//     console.log(dbEquipment);
-//     res.status(200).end();
-//   });
-// });
+router.delete("/api/equipment/:id", function (req, res) {
+  // delte 1 equipment entry
+  db.Equipment.destroy({
+    where: {
+      id: req.body.id,
+    },
+  }).then(function (dbEquipment) {
+    console.log(dbEquipment);
+    res.status(200).end();
+  });
+});
 
 module.exports = router;
