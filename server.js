@@ -19,7 +19,7 @@ app.set("view engine", "handlebars");
 app.use(require("./controllers/controller.js"));
 
 // listen on port 3000
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3500;
 
 // bring in the models
 var db = require("./models");
