@@ -1,29 +1,48 @@
-<section class="hero is-dark is-bold">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">
-                Product Management
-            </h1>
-
+<ul class="nav nav-tabs">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">Asset Functions</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="./partials/forms/add.handlebars">Add</a>
+            <a class="dropdown-item" href="#">Update</a>
+            <a class="dropdown-item" href="#">Delete</a>
+            {{!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a> --}}
         </div>
-    </div>
-</section>
-<br>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Dashboard</a>
+    </li>
+</ul>
 
-<div class="container">
-    <div class="columns is-mobile">
-        {{!-- <div class="column "> --}}
-            <div class="card">
-                <div class="content">
-
-
-                    {{>forms/update}}
-
-
-                    {{>tables/assetTable}}
+<div id="pageHolder">
+    <div class="container">
+        <section class="hero is-dark is-bold">
+            <div class="hero-body">
+                <div class="container">
+                    <div>
+                        <h1 class="title">
+                            Inventory/Asset Manger
+                        </h1>
+                    </div>
                 </div>
             </div>
-            {{!--
-        </div> --}}
+        </section>
+        <br>
+        <div class="columns is-mobile">
+            {{!-- <div class="column "> --}}
+                <div class="card">
+                    <div class="content">
+
+
+                        {{>forms/update}}
+
+
+                        {{>tables/assetTable}}
+                    </div>
+                </div>
+                {{!--
+            </div> --}}
+        </div>
     </div>
 </div>
