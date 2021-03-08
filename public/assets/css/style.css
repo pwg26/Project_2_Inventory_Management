@@ -66,3 +66,8 @@ p {
   font-family: "Caladea", serif;
   background-color: rgb(207, 204, 204);
 }
+
+.navFont {
+  font-family: "Caladea", serif;
+  font-size: 24px;
+}
