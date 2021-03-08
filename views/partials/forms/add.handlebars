@@ -5,12 +5,7 @@
     <div class="field">
         <label for="nameInput" class="label">Product Name</label>
         <div class="control">
-            <select id='brandFilter' class='form-control'>
-                <option>Choose asset type</option>
-                {{#each asset}}
-                <option value="{{this}}">{{this.name}}</option>
-                {{/each}}
-            </select>
+            <input class="input field-place" id="nameInput" name="name" type="text" placeholder="Equipment name" />
         </div>
     </div>
 
@@ -84,13 +79,13 @@
         </div>
     </div>
     {{!-- Checkout --}}
-    <div class="field">
+    {{!-- <div class="field">
         <label for="checkOut" class="label">time checked out</label>
         <div class="control">
             <input class="input" type="text" id="checkOut" placeholder="time checked-out?" />
 
         </div>
-    </div>
+    </div> --}}
 
     <button class="btn btn-primary btn-style" type="submit" value="Send">submit</button>
 </form>
