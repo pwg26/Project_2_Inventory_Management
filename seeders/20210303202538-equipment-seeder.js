@@ -3,6 +3,8 @@
 const { assert } = require("console");
 const { DEFAULT_MIN_VERSION } = require("tls");
 
+
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
@@ -28,8 +30,8 @@ module.exports = {
        asset_value: 30000,
        location: 'Chicago',
        is_rented: false,
-       company_renting: null,
-       rental_rate: null,
+       company_renting: '--',
+       rental_rate: 175,
        time_checked_out: null,
        time_checked_in: null,
        realized_returns: null,
@@ -65,5 +67,6 @@ module.exports = {
 
 
     // sequelize db:seed:all  
+    // Pp
   }
 };
