@@ -1,10 +1,12 @@
-<table id="all-assets" class="table table-striped">
-    <thead>
-        {{>tables/assetHeader}}
-    </thead>
-    <tbody>
-        {{#each equipment}}
-        {{>tables/assetRow}}
-        {{/each}}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table id="all-assets" class="table table-striped">
+        <thead>
+            {{>tables/assetHeader}}
+        </thead>
+        <tbody>
+            {{#each equipment}}
+            {{>tables/assetRow}}
+            {{/each}}
+        </tbody>
+    </table>
+</div>
