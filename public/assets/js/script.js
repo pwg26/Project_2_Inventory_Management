@@ -1,3 +1,5 @@
+const { application } = require("express");
+
 const add = document.getElementById("addForm");
 const update = document.getElementById("updateForm");
 const del = document.getElementById("deleteForm");
@@ -58,29 +60,27 @@ if (add) {
       }
     });
   });
-}
-
-else{
-console.log(del);
-del.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = {
-    id: document.getElementById("id").value,
-  };
-  // console.log(formData);
-  fetch(`/api/equipment/${formData.id}`, {
-    method: "DELETE",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  }).then((response) => {
-    if (response.ok) {
-      location.reload("/");
-    } else {
-      alert("somethings up");
-    }
+} else {
+  console.log(del);
+  del.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = {
+      id: document.getElementById("id").value,
+    };
+    // console.log(formData);
+    fetch(`/api/equipment/${formData.id}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((response) => {
+      if (response.ok) {
+        location.reload("/");
+      } else {
+        alert("somethings up");
+      }
+    });
   });
-});
 }
