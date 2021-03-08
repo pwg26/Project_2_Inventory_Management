@@ -16,7 +16,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "roo",
+    "username": "root",
     "password": "PantheR1994*",
     "database": "inventory_db",
     "host": "127.0.0.1",
