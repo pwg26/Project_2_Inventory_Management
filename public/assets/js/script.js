@@ -3,6 +3,7 @@ const { application } = require("express");
 const add = document.getElementById("addForm");
 const update = document.getElementById("updateForm");
 const del = document.getElementById("deleteForm");
+const addType = document.getElementById("addTypeForm");
 
 if (add) {
   console.log(add);
@@ -60,6 +61,38 @@ if (add) {
       }
     });
   });
+<<<<<<< HEAD
+=======
+
+  //=============================
+} else if (addType) {
+  console.log(addType);
+  addType.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = {
+      name: document.getElementById("nameInput").value,
+      description: document.getElementById("description").value,
+      asset_value: document.getElementById("assetVal").value,
+      rental_rate: document.getElementById("rentalRate").value,
+    };
+    // console.log(formData);
+    fetch(`/api/asset`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((response) => {
+      if (response.ok) {
+        location.reload("/");
+      } else {
+        alert("somethings up");
+      }
+    });
+  });
+  // ===============================
+>>>>>>> origin
 } else {
   console.log(del);
   del.addEventListener("submit", (e) => {

@@ -1,11 +1,7 @@
 <ul class="nav nav-tabs">
-    <a href="/dashboard">
-        <img style="width: 110px; height:110px" class="nav-link navFont" src="/assets/Images/IMSystemlogo.png"></img>
-
-    </a>
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle navFont" data-toggle="dropdown" href="/dashboard" role="button"
-            aria-haspopup="true" aria-expanded="false">Asset Functions</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/dashboard" role="button" aria-haspopup="true"
+            aria-expanded="false">Asset Functions</a>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="/add-asset">Add</a>
             <a class="dropdown-item" href="/update-asset">Update</a>
@@ -25,8 +21,8 @@
         <section class="hero is-dark is-bold">
             <div class="hero-body">
                 <div class="container">
-                    <div class="p-4">
-                        <h1 class="title text-center card p-4 titleFont">
+                    <div>
+                        <h1 class="title">
                             Inventory/Asset Manger
                         </h1>
                     </div>
@@ -34,16 +30,16 @@
             </div>
         </section>
         <br>
-        <div class="columns is-mobile" style="height: 1300px;">
+        <div class="columns is-mobile">
             {{!-- <div class="column "> --}}
                 <div class="card">
                     <div class="content">
 
 
-                        {{>forms/update}}
+                        {{>forms/addType}}
 
 
-                        {{>tables/assetTable}}
+                        {{>tables/assetTypetable}}
                     </div>
                 </div>
                 {{!--
