@@ -1,6 +1,6 @@
 // let table2 = require("./equipment2");
 module.exports = function (sequelize, DataTypes) {
-  let Assets = sequelize.define("Asset", {
+  let Asset = sequelize.define("Asset", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -17,15 +17,15 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.DECIMAL,
       defaultValue: null,
     },
-    quantity: {
-      type: DataTypes.DECIMAL,
-      defaultValue: null,
-    },
+    // quantity: {
+    //   type: DataTypes.DECIMAL,
+    //   defaultValue: null,
+    // },
   });
 
-  Assets.associate = (models) => {
-    Assets.hasMany(models.equipment);
-  };
+  //   Assets.associate = (models) => {
+  //     Assets.hasMany(models.equipment);
+  //   };
 
   return Asset;
   // default: nul

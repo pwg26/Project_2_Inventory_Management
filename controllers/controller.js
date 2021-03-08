@@ -33,6 +33,21 @@ router.get("/", function (req, res) {
       return res.render("index", hbsObject);
     });
 });
+// ====================================================================================================
+router.get("/addType-asset", function (req, res) {
+  // replace old function with sequelize function
+  db.Asset.findAll({ raw: true })
+    // use promise method to pass the inventory items...
+    .then(function (dbAsset) {
+      // into the main index, updating the page
+      var hbsObject = { asset: dbAsset };
+      hbsObject.equipment = hbsObject.asset.map((eq) => ({
+        ...eq,
+      }));
+      console.log(hbsObject.asset);
+      return res.render("index-addType", hbsObject);
+    });
+});
 
 router.get("/add-asset", function (req, res) {
   // replace old function with sequelize function
@@ -78,6 +93,20 @@ router.get("/delete-asset", function (req, res) {
       return res.render("index-delete", hbsObject);
     });
 });
+router.get("/delete-asset", function (req, res) {
+  // replace old function with sequelize function
+  db.Equipment.findAll({ raw: true })
+    // use promise method to pass the inventory items...
+    .then(function (dbEquipment) {
+      // into the main index, updating the page
+      var hbsObject = { equipment: dbEquipment };
+      hbsObject.equipment = hbsObject.equipment.map((eq) => ({
+        ...eq,
+      }));
+      console.log(hbsObject.equipment);
+      return res.render("index-delete", hbsObject);
+    });
+});
 
 router.get("/dashboard", function (req, res) {
   // replace old function with sequelize function
@@ -91,6 +120,24 @@ router.get("/dashboard", function (req, res) {
       }));
       console.log(hbsObject.equipment);
       return res.render("dashboard", hbsObject);
+    });
+});
+
+// =====================================================================================================
+router.post("/api/asset", function (req, res) {
+  // edited equipment create to add in a name, description, asset value, location, and rental rate
+  db.Asset.create(
+    req.body
+    // realized_returns: req.body.realized_returns,
+    // time_checked_in: req.body.time_checked_in,
+    // time_checked_out: req.body.time_checked_out,
+  )
+    // pass the result of our call
+    .then(function (dbAsset) {
+      // log the result to our terminal/bash window
+      console.log(dbAsset);
+      res.status(200).end();
+      // redirect
     });
 });
 
