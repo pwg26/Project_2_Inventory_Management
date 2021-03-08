@@ -26,7 +26,6 @@
             <textarea class="input field-place" id="description" name="description"></textarea>
         </div>
     </div>
-
     {{!-- asset value --}}
     <div class="field">
         <label for="assetVal" class="label">Asset Value</label>
@@ -36,35 +35,7 @@
 
         </div>
     </div>
-    {{!-- is rented --}}
-    <div class="field">
-        <label for="isRented" class="label">Rental Status</label>
-        <div class="control field-place">
-            <select name="is_rented" id="isRented">
-                <option value="1">True</option>
-                <option value="0">False</option>
-            </select>
 
-        </div>
-    </div>
-    {{!-- rented location --}}
-    <div class="field">
-        <label for="rentedLocation" class="label">Rented Location</label>
-        <div class="control">
-            <input class="input field-place" type="text" name="location" id="rentedLocation"
-                placeholder="i.e. Denver" />
-        </div>
-
-    </div>
-    {{!-- Company --}}
-    <div class="field">
-        <label for="companyRenting" class="label">Company Renting</label>
-        <div class="control">
-            <input class="input field-place" type="text" id="companyRenting" name="company_renting"
-                placeholder="i.e. Dave's Trucks" />
-
-        </div>
-    </div>
     {{!-- Rate --}}
     <div class="field">
         <label for="rentalRate" class="label">Rate Per Week</label>
@@ -72,6 +43,36 @@
             <input class="input field-place" type="text" id="rentalRate" name="rental_rate" placeholder="i.e. $200" />
 
         </div>
+        {{!-- is rented --}}
+        <div class="field">
+            <label for="isRented" class="label">Rental Status</label>
+            <div class="control field-place">
+                <select name="is_rented" id="isRented">
+                    <option value="1">True</option>
+                    <option value="0">False</option>
+                </select>
+
+            </div>
+        </div>
+        {{!-- rented location --}}
+        <div class="field">
+            <label for="rentedLocation" class="label">Rented Location</label>
+            <div class="control">
+                <input class="input field-place" type="text" name="location" id="rentedLocation"
+                    placeholder="i.e. Denver" />
+            </div>
+
+        </div>
+        {{!-- Company --}}
+        <div class="field">
+            <label for="companyRenting" class="label">Company Renting</label>
+            <div class="control">
+                <input class="input field-place" type="text" id="companyRenting" name="company_renting"
+                    placeholder="i.e. Dave's Trucks" />
+
+            </div>
+        </div>
+
     </div>
     {{!-- Return --}}
     <div class="field">
