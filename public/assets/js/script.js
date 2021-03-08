@@ -61,8 +61,6 @@ if (add) {
       }
     });
   });
-<<<<<<< HEAD
-=======
 
   //=============================
 } else if (addType) {
@@ -92,7 +90,6 @@ if (add) {
     });
   });
   // ===============================
->>>>>>> origin
 } else {
   console.log(del);
   del.addEventListener("submit", (e) => {
