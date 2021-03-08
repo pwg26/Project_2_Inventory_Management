@@ -1,6 +1,22 @@
+<h1 class="dashboardTitle">Mountain States Inventory Control</h1>
+<ul class="nav nav-tabs">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/index" role="button" aria-haspopup="true"
+            aria-expanded="false">Asset Functions</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="/add-asset">Add</a>
+            <a class="dropdown-item" href="/update-asset">Update</a>
+            <a class="dropdown-item" href="/delete-asset">Delete</a>
+            {{!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a> --}}
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Dashboard</a>
+    </li>
+</ul>
 <div class="container">
     <canvas id="myChart"></canvas>
-    <h1>CREATE PAG ABOVE SCRIPT TAGS</h1>
 </div>
 <script>
     let myChart = document.getElementById('myChart').getContext('2d');
