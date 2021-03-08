@@ -33,6 +33,67 @@ router.get("/", function (req, res) {
       return res.render("index", hbsObject);
     });
 });
+
+router.get("/add-asset", function (req, res) {
+  // replace old function with sequelize function
+  db.Equipment.findAll({ raw: true })
+    // use promise method to pass the inventory items...
+    .then(function (dbEquipment) {
+      // into the main index, updating the page
+      var hbsObject = { equipment: dbEquipment };
+      hbsObject.equipment = hbsObject.equipment.map((eq) => ({
+        ...eq,
+      }));
+      console.log(hbsObject.equipment);
+      return res.render("index-add", hbsObject);
+    });
+});
+
+router.get("/update-asset", function (req, res) {
+  // replace old function with sequelize function
+  db.Equipment.findAll({ raw: true })
+    // use promise method to pass the inventory items...
+    .then(function (dbEquipment) {
+      // into the main index, updating the page
+      var hbsObject = { equipment: dbEquipment };
+      hbsObject.equipment = hbsObject.equipment.map((eq) => ({
+        ...eq,
+      }));
+      console.log(hbsObject.equipment);
+      return res.render("index-update", hbsObject);
+    });
+});
+
+router.get("/delete-asset", function (req, res) {
+  // replace old function with sequelize function
+  db.Equipment.findAll({ raw: true })
+    // use promise method to pass the inventory items...
+    .then(function (dbEquipment) {
+      // into the main index, updating the page
+      var hbsObject = { equipment: dbEquipment };
+      hbsObject.equipment = hbsObject.equipment.map((eq) => ({
+        ...eq,
+      }));
+      console.log(hbsObject.equipment);
+      return res.render("index-delete", hbsObject);
+    });
+});
+
+router.get("/dashboard", function (req, res) {
+  // replace old function with sequelize function
+  db.Equipment.findAll({ raw: true })
+    // use promise method to pass the inventory items...
+    .then(function (dbEquipment) {
+      // into the main index, updating the page
+      var hbsObject = { equipment: dbEquipment };
+      hbsObject.equipment = hbsObject.equipment.map((eq) => ({
+        ...eq,
+      }));
+      console.log(hbsObject.equipment);
+      return res.render("dashboard", hbsObject);
+    });
+});
+
 // post route to create new inventory item
 router.post("/api/equipment", function (req, res) {
   // edited equipment create to add in a name, description, asset value, location, and rental rate
