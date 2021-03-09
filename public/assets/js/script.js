@@ -1,5 +1,3 @@
-const { application } = require("express");
-
 const add = document.getElementById("addForm");
 const update = document.getElementById("updateForm");
 const del = document.getElementById("deleteForm");

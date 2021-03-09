@@ -1,19 +1,10 @@
-<a href="/dashboard">
-    <img style="width: 110px; height:110px" class="nav-link navFont" src="/assets/Images/IMSystemlogo.png"></img>
+<ul class="nav nav-tabs">
+    <a href="/dashboard">
+        <img style="width: 110px; height:110px" class="nav-link navFont" src="/assets/Images/IMSystemlogo.png"></img>
 
-</a>
-<li class="nav-item dropdown">
+    </a>
+    <li class="nav-item dropdown">
 
-<<<<<<< HEAD
-    <a class="nav-link dropdown-toggle navFont" data-toggle="dropdown" href="/dashboard" role="button"
-        aria-haspopup="true" aria-expanded="false">Asset Functions</a>
-    <div class="dropdown-menu">
-        <a class="dropdown-item" href="/add-asset">Add</a>
-        <a class="dropdown-item" href="/update-asset">Update</a>
-        <a class="dropdown-item" href="/delete-asset">Delete</a>
-        {{!-- <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a> --}}
-=======
         <a class="nav-link dropdown-toggle navFont" data-toggle="dropdown" href="/dashboard" role="button"
             aria-haspopup="true" aria-expanded="false">Asset Functions</a>
         <div class="dropdown-menu">
@@ -24,38 +15,34 @@
             <a class="dropdown-item" href="#">Separated link</a> --}}
         </div>
     </li>
-    <div id="pageHolder">
-        <div class="container">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="/assets\Images\backhoe2.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/assets\Images\front end loader.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/assets\Images\skid2.jpg" alt="Third slide">
+</ul>
+<div id="pageHolder" style="height: 1600px;">
+    {{!-- <div class="container"> --}}
+        <div id="carouselExampleSlidesOnly" class="carousel slide p-4" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="/assets\Images\backhoe2.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/assets\Images\front end loader.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/assets\Images\skid2.jpg" alt="Third slide">
 
-                    </div>
                 </div>
             </div>
+        </div>
 
 
 
 
 
+        <div class="card m-4">
 
             <canvas id="myChart"></canvas>
-            <h1></h1>
         </div>
->>>>>>> 005fe54d3fdf2c88c8174c65471f7dd7cc574da5
-    </div>
-</li>
-<div class="container">
-
-    <canvas id="myChart"></canvas>
-    <h1></h1>
+        {{!--
+    </div> --}}
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <script type="module">
@@ -63,16 +50,10 @@
     let myChart = document.getElementById('myChart').getContext('2d');
 
 
-
-    console.log()
-
-
-
-
     let quantChart = new Chart(myChart, {
         type: "pie",//bar, pie, line, doughnut, radar,
         data: {
-            labels: fetchData(),
+            labels: ['Boom Lift', 'Scissor Lift', 'Forklift', 'Single Man Lift', 'Telehandler', 'Bulldozer', 'Skid Steer Loader'],
             datasets: [{
                 Label: "Quantity",
                 data: [
@@ -82,6 +63,7 @@
                     600,
                     400,
                     150,
+                    252,
                 ],
                 //    backgroundColor:'green'
                 backgroundColor: [
@@ -91,7 +73,7 @@
                     'rgb(75, 192, 192,0.6)',
                     'rgb(153, 102, 255,0.6)',
                     'rgb(255, 99, 64,0.6)',
-
+                    'rgb(255, 102, 132,0.6)'
                 ],
                 borderWidth: 2,
                 borderColor: '#777',
@@ -99,6 +81,7 @@
                 hoverBorderColor: 'black'
             }]
         },
+
         options: {
             title: {
                 display: true,
@@ -111,6 +94,7 @@
                 labels: {
                     fontColor: "black"
                 }
+
             },
             layout: {
                 padding: {
@@ -123,6 +107,9 @@
             tooltips: {
                 enabeld: true
             }
+
         }
+
     });
+
 </script>

@@ -48,20 +48,20 @@ router.get("/", function (req, res) {
     });
 });
 // ====================================================================================================
-router.get("/addType-asset", function (req, res) {
-  // replace old function with sequelize function
-  db.Asset.findAll({ raw: true })
-    // use promise method to pass the inventory items...
-    .then(function (dbAsset) {
-      // into the main index, updating the page
-      var hbsObject = { asset: dbAsset };
-      hbsObject.equipment = hbsObject.asset.map((eq) => ({
-        ...eq,
-      }));
-      console.log(hbsObject.asset);
-      return res.render("index-addType", hbsObject);
-    });
-});
+// router.get("/addType-asset", function (req, res) {
+//   // replace old function with sequelize function
+//   db.Asset.findAll({ raw: true })
+//     // use promise method to pass the inventory items...
+//     .then(function (dbAsset) {
+//       // into the main index, updating the page
+//       var hbsObject = { asset: dbAsset };
+//       hbsObject.equipment = hbsObject.asset.map((eq) => ({
+//         ...eq,
+//       }));
+//       console.log(hbsObject.asset);
+//       return res.render("index-addType", hbsObject);
+//     });
+// });
 
 router.get("/add-asset", function (req, res) {
   // replace old function with sequelize function
@@ -124,26 +124,26 @@ router.get("/delete-asset", function (req, res) {
 
 router.get("/dashboard", function (req, res) {
   // replace old function with sequelize function
-  db.Asset.findAll({ raw: true })
+  db.Equipment.findAll({ raw: true })
     // use promise method to pass the inventory items...
-    .then(function (dbAsset) {
-      var kvalue = [];
-      // into the main index, updating the page
-      var hbsObject = { asset: dbAsset };
-      var y = hbsObject.asset;
-      y.forEach((key) => kvalue.push(key.asset_value));
-      return res.render("dashboard", hbsObject.asset);
+    .then(function (dbEquipment) {
+      var hbsObject = { equipment: dbEquipment };
+      hbsObject.equipment = hbsObject.equipment.map((eq) => ({
+        ...eq,
+      }));
+      console.log(hbsObject.equipment);
+      return res.render("dashboard", hbsObject.equipment);
     });
 });
 
 // router.post("/api/data-dash", function (req, res) {
-//   db.Asset.findAll({ raw: true })
+//   db.Equipment.findAll({ raw: true })
 //     // use promise method to pass the inventory items...
-//     .then(function (dbAsset) {
+//     .then(function (dbEquipment) {
 //       var kvalue = [];
 //       // into the main index, updating the page
-//       var hbsObject = { asset: dbAsset };
-//       var y = hbsObject.asset;
+//       var hbsObject = { equipment: dbEquipment };
+//       var y = hbsObject.equipment;
 //       y.forEach((key) => kvalue.push(key.name));
 //       // console.log(kvalue);
 //       return kvalue;
