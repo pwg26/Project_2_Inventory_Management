@@ -17,96 +17,106 @@
     </li>
     <div id="pageHolder">
         <div class="container">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="/assets\Images\backhoe2.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/assets\Images\front end loader.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="/assets\Images\skid2.jpg" alt="Third slide">
+            <div class="container">
+                <section class="hero is-dark is-bold">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div>
+                                <h1 class="title">
+                                    Inventory/Asset Manger
+                                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img class="d-block w-100" src="/assets\Images\backhoe2.jpg"
+                                                    alt="First slide">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" src="/assets\Images\front end loader.jpg"
+                                                    alt="Second slide">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" src="/assets\Images\skid2.jpg"
+                                                    alt="Third slide">
 
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-            <canvas id="myChart"></canvas>
-            <h1></h1>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <script type="module">
-
-        let myChart = document.getElementById('myChart').getContext('2d');
+                                            </div>
+                                        </div>
+                                    </div>
 
 
-        let quantChart = new Chart(myChart, {
-            type: "pie",//bar, pie, line, doughnut, radar,
-            data: {
-                labels: ['Boom Lift', 'Scissor Lift', 'Forklift', 'Single Man Lift', 'Telehandler', 'Bulldozer', 'Skid Steer Loader'],
-                datasets: [{
-                    Label: "Quantity",
-                    data: [
-                        552,
-                        718,
-                        888,
-                        600,
-                        400,
-                        150,
-                        252,
-                    ],
-                    //    backgroundColor:'green'
-                    backgroundColor: [
-                        'rgb(255, 99, 132,0.6)',
-                        'rgb(54, 162, 235,0.6)',
-                        'rgb(255, 206, 86,0.6)',
-                        'rgb(75, 192, 192,0.6)',
-                        'rgb(153, 102, 255,0.6)',
-                        'rgb(255, 99, 64,0.6)',
-                        'rgb(255, 102, 132,0.6)'
-                    ],
-                    borderWidth: 2,
-                    borderColor: '#777',
-                    hoverBorderWidth: 4,
-                    hoverBorderColor: 'black'
-                }]
-            },
 
-            options: {
-                title: {
-                    display: true,
-                    text: "Asset Value ",
-                    FontSize: 35
-                },
-                legend: {
-                    display: true,
-                    position: "right",
-                    labels: {
-                        fontColor: "black"
-                    }
 
-                },
-                layout: {
-                    padding: {
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        top: 100
-                    }
-                },
-                tooltips: {
-                    enabeld: true
-                }
 
-            }
 
-        });
+                                    <canvas id="myChart"></canvas>
+                                    <h1></h1>
+                            </div>
+                        </div>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+                        <script type="module">
 
-    </script>
+                            let myChart = document.getElementById('myChart').getContext('2d');
+
+
+                            let quantChart = new Chart(myChart, {
+                                type: "pie",//bar, pie, line, doughnut, radar,
+                                data: {
+                                    labels: ['Boom Lift', 'Scissor Lift', 'Forklift', 'Single Man Lift', 'Telehandler', 'Bulldozer', 'Skid Steer Loader'],
+                                    datasets: [{
+                                        Label: "Quantity",
+                                        data: [
+                                            552,
+                                            718,
+                                            888,
+                                            600,
+                                            400,
+                                            150,
+                                            252,
+                                        ],
+                                        //    backgroundColor:'green'
+                                        backgroundColor: [
+                                            'rgb(255, 99, 132,0.6)',
+                                            'rgb(54, 162, 235,0.6)',
+                                            'rgb(255, 206, 86,0.6)',
+                                            'rgb(75, 192, 192,0.6)',
+                                            'rgb(153, 102, 255,0.6)',
+                                            'rgb(255, 99, 64,0.6)',
+                                            'rgb(255, 102, 132,0.6)'
+                                        ],
+                                        borderWidth: 2,
+                                        borderColor: '#777',
+                                        hoverBorderWidth: 4,
+                                        hoverBorderColor: 'black'
+                                    }]
+                                },
+
+                                options: {
+                                    title: {
+                                        display: true,
+                                        text: "Asset Value ",
+                                        FontSize: 35
+                                    },
+                                    legend: {
+                                        display: true,
+                                        position: "right",
+                                        labels: {
+                                            fontColor: "black"
+                                        }
+
+                                    },
+                                    layout: {
+                                        padding: {
+                                            left: 0,
+                                            right: 0,
+                                            bottom: 0,
+                                            top: 100
+                                        }
+                                    },
+                                    tooltips: {
+                                        enabeld: true
+                                    }
+
+                                }
+
+                            });
+
+                        </script>
