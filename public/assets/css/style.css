@@ -1,4 +1,4 @@
-body {
+#pageHolder {
   background-color: cornflowerblue;
   background-image: url("../Images/practice.jpg");
   background-repeat: no-repeat;
@@ -21,18 +21,18 @@ h1 {
 
 .carousel {
   margin: 0 auto;
-  height: 30%;
-  width: 30%;
+  height: 35%;
+  width: 35%;
 }
 .carousel {
   margin: 0 auto;
-  height: 30%;
-  width: 30%;
+  height: 35%;
+  width: 35%;
 }
 .carousel {
   margin: 0 auto;
-  height: 30%;
-  width: 30%;
+  height: 35%;
+  width: 35%;
 }
 
 h5 {
