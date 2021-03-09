@@ -17,7 +17,21 @@ var db = require("../models/");
 // });
 // for assets page ========================================================================
 // get route, edited to match sequelize
+// function showArray() {
+//   // var kvalue = [];
+//   db.Asset.findAll({ raw: true })
+//     // use promise method to pass the inventory items...
+//     .then(function (dbAsset) {
+//       var kvalue = [];
+//       // into the main index, updating the page
+//       var hbsObject = { asset: dbAsset };
+//       var y = hbsObject.asset;
+//       y.forEach((nodkey) => kvalue.push(key.name));
+//       console.log(kvalue);
+//     });
+// }
 
+// showArray();
 // ******* works but page needs to be reloaded
 router.get("/", function (req, res) {
   // replace old function with sequelize function
@@ -110,36 +124,49 @@ router.get("/delete-asset", function (req, res) {
 
 router.get("/dashboard", function (req, res) {
   // replace old function with sequelize function
-  db.Equipment.findAll({ raw: true })
+  db.Asset.findAll({ raw: true })
     // use promise method to pass the inventory items...
-    .then(function (dbEquipment) {
+    .then(function (dbAsset) {
+      var kvalue = [];
       // into the main index, updating the page
-      var hbsObject = { equipment: dbEquipment };
-      hbsObject.equipment = hbsObject.equipment.map((eq) => ({
-        ...eq,
-      }));
-      console.log(hbsObject.equipment);
-      return res.render("dashboard", hbsObject);
+      var hbsObject = { asset: dbAsset };
+      var y = hbsObject.asset;
+      y.forEach((key) => kvalue.push(key.asset_value));
+      return res.render("dashboard", hbsObject.asset);
     });
 });
 
+// router.post("/api/data-dash", function (req, res) {
+//   db.Asset.findAll({ raw: true })
+//     // use promise method to pass the inventory items...
+//     .then(function (dbAsset) {
+//       var kvalue = [];
+//       // into the main index, updating the page
+//       var hbsObject = { asset: dbAsset };
+//       var y = hbsObject.asset;
+//       y.forEach((key) => kvalue.push(key.name));
+//       // console.log(kvalue);
+//       return kvalue;
+//     });
+// });
+
 // =====================================================================================================
-router.post("/api/asset", function (req, res) {
-  // edited equipment create to add in a name, description, asset value, location, and rental rate
-  db.Asset.create(
-    req.body
-    // realized_returns: req.body.realized_returns,
-    // time_checked_in: req.body.time_checked_in,
-    // time_checked_out: req.body.time_checked_out,
-  )
-    // pass the result of our call
-    .then(function (dbAsset) {
-      // log the result to our terminal/bash window
-      console.log(dbAsset);
-      res.status(200).end();
-      // redirect
-    });
-});
+// router.post("/api/asset", function (req, res) {
+//   // edited equipment create to add in a name, description, asset value, location, and rental rate
+//   db.Asset.create(
+//     req.body
+//     // realized_returns: req.body.realized_returns,
+//     // time_checked_in: req.body.time_checked_in,
+//     // time_checked_out: req.body.time_checked_out,
+//   )
+//     // pass the result of our call
+//     .then(function (dbAsset) {
+//       // log the result to our terminal/bash window
+//       console.log(dbAsset);
+//       res.status(200).end();
+//       // redirect
+//     });
+// });
 
 // post route to create new inventory item
 router.post("/api/equipment", function (req, res) {

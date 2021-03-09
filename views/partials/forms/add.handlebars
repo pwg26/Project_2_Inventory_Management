@@ -21,13 +21,13 @@
     <div class="field">
         <label for="assetVal" class="label">Asset Value</label>
         <div class="control">
-            <input class="input field-place" id="assetVal" name="asset_value" type="number"
-                placeholder="asset value of the product." required value="0" />
+            <input class="input field-place" id="asset_value" name="asset_value" type="number"
+                placeholder="asset value of the product." />
 
         </div>
     </div>
     {{!-- is rented --}}
-    <div class="field">
+    {{!-- <div class="field">
         <label for="isRented" class="label">Rental Status</label>
         <div class="control">
             <select name="is_rented" id="isRented">
@@ -36,16 +36,15 @@
             </select>
 
         </div>
-    </div>
+    </div> --}}
     {{!-- rented location --}}
-    {{!-- <div class="field">
-        <label for="rentedLocation" class="label">Rented Location</label>
+    <div class="field">
+        <label for="rentedLocation" class="label">Asset Location</label>
         <div class="control">
-            <input class="input field-place" type="text" name="location" id="rentedLocation"
-                placeholder="i.e. Denver" />
+            <input class="input field-place" type="text" name="location" id="location" placeholder="i.e. Denver" />
         </div>
 
-    </div> --}}
+    </div>
     {{!-- Company --}}
     {{!-- <div class="field">
         <label for="companyRenting" class="label">Company Renting</label>

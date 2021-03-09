@@ -5,6 +5,14 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    asset_value: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
     location: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,6 +24,10 @@ module.exports = function (sequelize, DataTypes) {
     company_renting: {
       type: DataTypes.STRING,
       defaultValue: "--",
+    },
+    rental_rate: {
+      type: DataTypes.DECIMAL,
+      defaultValue: null,
     },
     time_checked_out: {
       type: DataTypes.DATE,

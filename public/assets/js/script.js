@@ -10,8 +10,8 @@ if (add) {
     const formData = {
       name: document.getElementById("nameInput").value,
       description: document.getElementById("description").value,
-      asset_value: document.getElementById("assetVal").value,
-      location: document.getElementById("rentedLocation").value,
+      asset_value: document.getElementById("asset_value").value,
+      location: document.getElementById("location").value,
       rental_rate: document.getElementById("rentalRate").value,
     };
     // console.log(formData);
@@ -38,10 +38,13 @@ if (add) {
       id: document.getElementById("idInput").value,
       name: document.getElementById("nameInput").value,
       description: document.getElementById("description").value,
-      asset_value: document.getElementById("assetVal").value,
-      rental_status: document.getElementById("isRented").value,
-      rented_location: document.getElementById("rentedLocation").value,
+      rental_rate: document.getElementById("rentalRate").value,
+      asset_value: document.getElementById("asset_value").value,
+      location: document.getElementById("location").value,
+      is_rented: document.getElementById("is_rented").value,
       company_renting: document.getElementById("companyRenting").value,
+      time_checked_in: document.getElementById("checkIn").value,
+      time_checked_out: document.getElementById("checkOut").value,
     };
     // console.log(formData);
     fetch(`/api/equipment/${formData.id}`, {
@@ -59,36 +62,7 @@ if (add) {
       }
     });
   });
-
-  //=============================
-} else if (addType) {
-  console.log(addType);
-  addType.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const formData = {
-      name: document.getElementById("nameInput").value,
-      description: document.getElementById("description").value,
-      asset_value: document.getElementById("assetVal").value,
-      rental_rate: document.getElementById("rentalRate").value,
-    };
-    // console.log(formData);
-    fetch(`/api/asset`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    }).then((response) => {
-      if (response.ok) {
-        location.reload("/");
-      } else {
-        alert("somethings up");
-      }
-    });
-  });
-  // ===============================
-} else {
+} else if (del) {
   console.log(del);
   del.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -112,3 +86,32 @@ if (add) {
     });
   });
 }
+
+//=============================
+// } else if (addType) {
+//   console.log(addType);
+//   addType.addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     const formData = {
+//       name: document.getElementById("nameInput").value,
+//       description: document.getElementById("description").value,
+//       asset_value: document.getElementById("assetVal").value,
+//       rental_rate: document.getElementById("rentalRate").value,
+//     };
+//     // console.log(formData);
+//     fetch(`/api/asset`, {
+//       method: "POST",
+//       headers: {
+//         Accept: "application/json",
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(formData),
+//     }).then((response) => {
+//       if (response.ok) {
+//         location.reload("/");
+//       } else {
+//         alert("somethings up");
+//       }
+//     });
+//   });
+// ===============================
